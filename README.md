@@ -2,9 +2,16 @@
 
 IMG Optical Character Recognition Tool with Dockerfile Implemented.
 
-## Move To Directory
+## Download Repository
 
 ```
+git clone https://github.com/toby0622/IMG-Optical-Character-Recognition-Tool-Docker
+```
+
+## Move To Program Folder
+
+```
+cd IMG-Optical-Character-Recognition-Tool-Docker
 cd IMGOCR
 ```
 
