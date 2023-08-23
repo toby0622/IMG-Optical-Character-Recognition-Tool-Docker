@@ -2,6 +2,12 @@
 
 IMG Optical Character Recognition Tool with Dockerfile Implemented.
 
+## Move To Directory
+
+```
+cd IMGOCR
+```
+
 ## Docker Image Build
 
 ```
