@@ -23,7 +23,7 @@ docker build -t imgocr .
 
 ## Run Docker Container (Initial Setup)
 
-if having multiple GPUs, specific graphics card can be selected
+If having Multiple GPUs, Specific Graphics Card can be Selected.
 
 ```
 docker run --name imgocrflask --gpus all -p 9487:9487 imgocr
