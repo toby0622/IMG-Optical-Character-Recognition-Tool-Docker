@@ -27,7 +27,7 @@ docker build -t imgocr .
 docker run --name imgocrflask --gpus all -p 9487:9487 imgocr
 ```
 
-## Start Docker Container (Multiple Start)
+## Start Docker Container
 
 ```
 docker start imgocrflask
