@@ -75,7 +75,7 @@ def upload_file():
         filenames = []
         ocr_results = []
         ocr_list_result = []
-        ocr_final_result = str()
+        ocr_final_result = str("")
         counter = 1
         total_images = len(uploaded_files)
 
@@ -115,9 +115,6 @@ def upload_file():
 
     txt_export_web(ocr_final_result)
     json_export_web(ocr_json)
-
-    ocr_results.clear()
-    ocr_list_result.clear()
 
     return render_template('result.html',
                            filenames=filenames,
@@ -186,9 +183,6 @@ def upload_file_2():
     txt_export_web(ocr_final_result)
     json_export_web(ocr_json)
 
-    ocr_results.clear()
-    ocr_list_result.clear()
-
     return render_template('result.html',
                            filenames=filenames,
                            ocr_final_result=ocr_final_result)
@@ -229,4 +223,4 @@ def progress():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True, port=9487)
+    app.run(debug=True, port=9487)
