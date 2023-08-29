@@ -1,11 +1,16 @@
 import numpy as np
 from paddleocr import PaddleOCR
+from paddleocr import draw_ocr
+from PIL import Image
 import cv2
 import datetime
+from opencc import OpenCC
 
 
 def image_ocr_match(image_path, counter_number):
     process_start = datetime.datetime.now()  # process starting time
+
+    cc = OpenCC('s2twp')
 
     ocr_model = PaddleOCR(use_angle_cls=True, lang="ch",
                           use_gpu=True, enable_mkldnn=True,
@@ -38,6 +43,15 @@ def image_ocr_match(image_path, counter_number):
     #     print(result[1][0])
 
     data = recognition_result[0]
+
+    # result static
+    visual = Image.open(image_path).convert('RGB')
+    rec_boxes = [line[0] for line in data]
+    rec_texts = [cc.convert(str(line[1][0])) for line in data]
+    probability = [line[1][1] for line in data]
+    im_show = draw_ocr(visual, rec_boxes, rec_texts, probability, font_path='font/Yozai-Regular.ttf')
+    im_show = Image.fromarray(im_show)
+    im_show.save('static/result.jpg', quality=100, subsampling=0)
 
     process_finish = datetime.datetime.now()  # process finishing time
 
