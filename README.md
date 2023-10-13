@@ -34,3 +34,11 @@ docker run --name imgocrflask --gpus all -p 9487:9487 imgocr
 ```
 docker start imgocrflask
 ```
+
+## Always On
+
+If Execution on OS Boot Needed, Update the Container Status.
+
+```
+docker update --restart=always imgocrflask
+```
